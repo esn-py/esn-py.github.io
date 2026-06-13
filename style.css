@@ -1,0 +1,290 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+html {
+	width: 100%;
+	height: 100%;
+}
+
+body {
+	width: 100%;
+	min-height: 100%;
+	background-color: #f5f5f7;
+	color: #1d1d1f;
+	font-family: "Noto Serif", "Noto Serif HK", serif;
+	font-size: 2vh;
+	line-height: 3.3vh;
+	overflow-x: hidden;
+}
+
+html[lang="zh-Hant"] body {
+	font-family: "Noto Serif HK", "Noto Serif", serif;
+}
+
+body.home-page {
+	height: 100%;
+	overflow: hidden;
+}
+
+nav {
+	position: fixed;
+	top: 42vh;
+	left: 2vw;
+	width: 8vw;
+	text-align: center;
+	z-index: 3;
+}
+
+nav > p {
+	margin-bottom: 1vh;
+	background-color: rgba(29, 29, 31, 0.88);
+	border-radius: 8px;
+}
+
+nav > p:hover {
+	background-color: #2f5bea;
+	cursor: pointer;
+}
+
+nav a, nav a:visited {
+	display: block;
+	padding: 1.2vh 0;
+	color: white;
+	font-family: Oswald, "Noto Serif HK", sans-serif;
+	text-decoration: none;
+}
+
+article {
+	width: 100%;
+}
+
+header {
+	min-height: 100vh;
+	box-sizing: border-box;
+	background-image: linear-gradient(rgba(245, 245, 247, 0.82), rgba(245, 245, 247, 0.38)), url("img/DSCF0221_Original.jpg");
+	background-size: cover;
+	background-position: center 42%;
+	text-align: center;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: flex-start;
+	padding-top: 10vh;
+}
+
+.content-page header {
+	min-height: 58vh;
+}
+
+.hobby-page header {
+	background-image: linear-gradient(rgba(17, 17, 17, 0.7), rgba(17, 17, 17, 0.42)), url("img/DSCF0221_Original.jpg");
+	color: white;
+}
+
+h1 {
+	width: 80%;
+	font-family: Oswald, "Noto Serif", sans-serif;
+	font-size: 8.5vh;
+	line-height: 9.5vh;
+}
+
+html[lang="zh-Hant"] h1 {
+	font-family: "Noto Serif HK", serif;
+	font-weight: 800;
+}
+
+header > p:first-of-type {
+	width: 76%;
+	margin-top: 2vh;
+	font-size: 3vh;
+	line-height: 4.4vh;
+}
+
+header > p:last-of-type {
+	margin-top: 4vh;
+}
+
+header > p > a, header > p > a:visited {
+	display: inline-block;
+	margin: 0 1vw;
+	padding: 1.4vh 2.8vw;
+	border: 2px solid #2f5bea;
+	border-radius: 6vh;
+	color: #2f5bea;
+	font-family: Oswald, "Noto Serif HK", sans-serif;
+	text-decoration: none;
+	background-color: rgba(245, 245, 247, 0.72);
+}
+
+header > p > a:first-of-type {
+	background-color: #2f5bea;
+	color: white;
+}
+
+header > p > a:hover {
+	opacity: 0.78;
+}
+
+section {
+	width: 68vw;
+	margin: 0 auto;
+	padding: 10vh 8vw;
+	background-color: white;
+}
+
+.hobby-page section:not(.gallery) {
+	width: 100%;
+	box-sizing: border-box;
+	padding-left: 16vw;
+	padding-right: 16vw;
+	background-color: #111111;
+	color: white;
+}
+
+h2 {
+	margin-bottom: 4vh;
+	font-size: 5vh;
+	line-height: 6.4vh;
+	text-align: center;
+}
+
+section > p {
+	margin-bottom: 3vh;
+	text-align: left;
+}
+
+section > p:not(:last-of-type) {
+	border-bottom: 1px solid #d2d2d7;
+	padding-bottom: 3vh;
+}
+
+.hobby-page section > p:not(:last-of-type) {
+	border-bottom: 1px solid #555555;
+}
+
+section.gallery {
+	width: 100%;
+	box-sizing: border-box;
+	padding: 8vh 0 10vh;
+	background-color: #f5f5f7;
+	overflow: hidden;
+}
+
+figure {
+	display: flex;
+	width: 360vw;
+	animation-name: photoWall;
+	animation-duration: 42s;
+	animation-timing-function: linear;
+	animation-iteration-count: infinite;
+}
+
+figure:hover {
+	animation-play-state: paused;
+}
+
+figure > img {
+	width: 28vw;
+	height: 48vh;
+	margin-right: 2vw;
+	object-fit: cover;
+	border-radius: 8px;
+}
+
+figure > img[src$="profile.jpg"] {
+	object-position: center 72%;
+}
+
+@keyframes photoWall {
+	from {
+		margin-left: 0;
+	}
+
+	to {
+		margin-left: -180vw;
+	}
+}
+
+@media only screen and (max-width: 900px) {
+	body {
+		font-size: 2vh;
+		line-height: 3.2vh;
+	}
+
+	nav {
+		position: fixed;
+		top: 0;
+		left: 0;
+		width: 100%;
+		background-color: rgba(29, 29, 31, 0.9);
+	}
+
+	nav > p {
+		display: inline-block;
+		width: 45%;
+		margin-bottom: 0;
+		background-color: transparent;
+		border-radius: 0;
+	}
+
+	header {
+		min-height: 92vh;
+		padding-top: 14vh;
+		background-position: center;
+	}
+
+	.content-page header {
+		min-height: 54vh;
+	}
+
+	h1 {
+		width: 88%;
+		font-size: 5.6vh;
+		line-height: 6.8vh;
+	}
+
+	header > p:first-of-type {
+		width: 84%;
+		font-size: 2.4vh;
+		line-height: 3.6vh;
+	}
+
+	header > p > a, header > p > a:visited {
+		margin: 1vh 1vw;
+		padding: 1.2vh 7vw;
+	}
+
+	section, .hobby-page section:not(.gallery) {
+		width: 100%;
+		box-sizing: border-box;
+		padding: 7vh 8vw;
+	}
+
+	h2 {
+		font-size: 4vh;
+		line-height: 5.3vh;
+	}
+
+	figure {
+		width: 720vw;
+		animation-duration: 36s;
+	}
+
+	figure > img {
+		width: 58vw;
+		height: 36vh;
+		margin-right: 2vw;
+	}
+
+	@keyframes photowall {
+		from {
+			margin-left: 0;
+		}
+
+		to {
+			margin-left: -360vw;
+		}
+	}
+}
